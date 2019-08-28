@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+#mainDisplay{
+  background-image:url(./images/arthas.jpg);
+  background-size:cover;
+  color:whitesmoke;
+}
+html,body{
+  height:100%;
+  width:100%;
+}
+#root{
+  height:100%;
+  background-color:white;
+}
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+}
