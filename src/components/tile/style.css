@@ -1,0 +1,9 @@
+.card{
+    width:fit-content;
+    box-shadow:black 3px 3px 3px;
+    margin:auto;
+}
+.imgThumb{
+    width:150px;
+    height:150px;
+}

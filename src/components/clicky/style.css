@@ -1,0 +1,9 @@
+#clicky{
+    min-height:100%;
+    background-color:white;
+    padding:0px 100px;
+    
+  }
+.container{
+  flex-wrap:wrap;
+}
