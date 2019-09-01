@@ -10,35 +10,25 @@ import './App.css';
 
 
 
-function shuffleArray(array) {
-  let i = array.length - 1;
-  for (; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
 
 class App extends Component {
-  
+     
   state={
     Icons
   };
-  shuffleArray =array => {
-    let i = array.length - 1;
+  shuffleArray = Icons => {
+    let i = Icons.length - 1;
     for (; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      const temp = Icons[i];
+      Icons[i] = Icons[j];
+      Icons[j] = temp;
     }
-    return array;
+    return Icons;
   }
 
   render(){
-    const shuffleIcons=shuffleArray(this.state.Icons)
+    const shuffleIcons=this.shuffleArray(this.state.Icons)
   return (
     <>
     <Wrapper>
@@ -50,7 +40,7 @@ class App extends Component {
       key={Icon.id}
       image={Icon.image}
       id={Icon.id}
-      shuffle={this.shuffleArray}
+      // shuffle={this.shuffleArray(this.state.Icons)}
       />
       ))}
     </Clicky>
