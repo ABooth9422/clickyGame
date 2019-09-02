@@ -14,8 +14,10 @@ import './App.css';
 class App extends Component {
      
   state={
-    Icons
+    Icons,
+    Score:0
   };
+  
   shuffleArray = Icons => {
     let i = Icons.length - 1;
     for (; i > 0; i--) {
@@ -26,13 +28,29 @@ class App extends Component {
     }
     return Icons;
   }
+  
+  _Click=()=>{
+    console.log("click")
+   
+    this.setState({Score:this.state.Score +1})
+    const shuffleIcons=this.shuffleArray(this.state.Icons)
+    return(
+      shuffleIcons.map(Icon=>(
+        <Tile
+        key={Icon.id}
+        image={Icon.image}
+        id={Icon.id}
+        click={this._Click}
+        />
+    )))
+  }
 
   render(){
     const shuffleIcons=this.shuffleArray(this.state.Icons)
   return (
     <>
     <Wrapper>
-    <Nav />
+    <Nav score={this.state.Score}/>
     <Jumbotron />
     <Clicky>
       {shuffleIcons.map(Icon => (
@@ -40,12 +58,12 @@ class App extends Component {
       key={Icon.id}
       image={Icon.image}
       id={Icon.id}
-      // shuffle={this.shuffleArray(this.state.Icons)}
+      click={this._Click}
       />
       ))}
     </Clicky>
     </Wrapper>
-    <Footer />
+    <Footer/>
     </>
   );
   }
