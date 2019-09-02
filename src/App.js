@@ -50,24 +50,15 @@ class App extends Component {
       this.setState({HighScore:this.state.Score})
     }
       this.shuffleArray(this.state.Icons)
-    //   return(
-    //   shuffleIcons.map(Icon=>(
-    //     <Tile
-    //     key={Icon.id}
-    //     image={Icon.image}
-    //     id={Icon.id}
-    //     click={this._Click}
-    //     />
-    // )))
+
       
   }
   render(){
-    //const shuffleIcons=this.shuffleArray(this.state.Icons)
   return (
     <>
     <Wrapper>
-    <Nav score={this.state.Score} highscore={this.state.HighScore} game={this.state.game}/>
     <Jumbotron />
+    <Nav score={this.state.Score} highscore={this.state.HighScore} game={this.state.game}/>
     <Clicky>
       {this.state.Icons.map(Icon => (
       <Tile 

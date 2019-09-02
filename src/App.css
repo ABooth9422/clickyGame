@@ -35,6 +35,7 @@
   background-image:url(./images/arthas.jpg);
   background-size:cover;
   color:whitesmoke;
+  background-position-y:-20px;
 }
 html,body{
   height:100%;
